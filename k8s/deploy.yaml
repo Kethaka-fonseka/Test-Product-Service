@@ -25,7 +25,7 @@ spec:
         app: product-service
     spec:
       containers:
-      - image: kethakaf/product-service-test:030a5e849de84ce943482c8149b0b37162785bf7
+      - image: kethakaf/product-service-test:{{tag}}
         imagePullPolicy: Always
         name: product-service-test
         resources: {}
