@@ -1,0 +1,13 @@
+name: Docker Image Of Product Service
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: run shell script
+      run: echo commit hash is ${{ github.sha }}
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag product-service:${{ github.sha }}
